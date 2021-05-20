@@ -36,8 +36,7 @@ Es un repositorio académico que permite ejemplificar el proceso de creación y 
       <a href="#Inicio-del-proyecto">Inicio del proyecto</a>
       <ul>
         <li><a href="#prerrequisitos">Prerrequisitos</a></li>
-        <li><a href="#instalacion">Instalación</a></li>
-      </ul>
+       </ul>
     </li>
     <li><a href="#usos">Usos</a></li>
     <li><a href="#licencia">Licencia</a></li>
@@ -116,7 +115,7 @@ Para poder usar el presente proyecto, tomar en consideración lo siguiente:
 <!-- USAGE EXAMPLES -->
 ## Usos
 
-La carpeta ejemlo01 tiene los siguiente archivos
+La carpeta ejemplo01 tiene los siguiente archivos
 * configuracion.py
 
 ```python
@@ -473,85 +472,6 @@ python consulta_datos1.py
 python consulta_datos2.py
 python consulta_datos3.py
 python consulta_datos4.py
-```
-
-```python
-print("Ejemplo 1")
-print("""Obtener todos los registros de 
-la entidad docentes """)
-docentes = session.query(Docente).all() # [docente1, docente2, docente3]
-```
-
-```python
-print("Ejemplo 2")
-print("""Obtener todos los registros de 
-la tabla docentes que tengan como valor en 
-el atributo especifico """)
-
-docentes_dos = session.query(Docente).filter(Docente.ciudad=="Loja").all()
-
-```
-```python
-print("Ejemplo 4")
-print("""Obtener todos los registros de·
-la tabla Docente que tengan el atributo ciudad un valor de Loja y 
-se ordenen por el atributo de la clase Docente nombre""")
-
-docentes = session.query(Docente).filter(Docente.ciudad=="Loja")\
-.order_by(Docente.nombre).all()
-print("--------------------------------")
-print(docentes)
-print("--------------------------------")
-```
-
-```python
-print("Ejemplo 7")
-print("""Obtener todos los registros de·
-la tabla Docente que tengan el atributo ciudad igual a Loja y además valor 
-del atributo nombre sea diferente de None. 
-Finalmente que se ordenen por el atributo de la clase Docente nombre""")
-
-docentes = session.query(Docente).filter(Docente.ciudad=="Loja", \
-Docente.nombre!=None).order_by(Docente.nombre).all() 
-
-print("--------------------------------")
-print(docentes)
-print("--------------------------------")
-```
-
-``` python
-print("Ejemplo 8")
-print("""Obtener todos los registros de·
-la tabla Docente que tengan dentro del valor del atributo ciudad  
-la cadena "oja" y 
-el atributo nombre sea diferente de None. 
-Finalmente que se ordenen por el atributo de la clase Docente nombre""")
-
-docentes = session.query(Docente).filter(Docente.ciudad.like("%oja%"), \
-Docente.nombre!=None).order_by(Docente.nombre).all() 
-print("--------------------------------")
-print(docentes)
-print("--------------------------------")
-```
-
-```python
-
-print("Ejemplo 10")
-print("""Uso de in_
-Obtener todos los registros de·
-la tabla Docente que tengan el valor del atributo apellido  
-en la lista dada ["Minga", "Borrero"]
-Finalmente que se ordenen por el atributo de la clase Docente nombre""")
-
-
-docentes = session.query(Docente).filter(Docente.apellido.in_(['Minga', \
-'Borrero', "Elizalde"])).order_by(Docente.nombre).all()
- 
-print("--------------------------------")
-print(docentes)
-print("--------------------------------")
-
-
 ```
 
 <!-- LICENSE -->
